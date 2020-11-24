@@ -25,43 +25,45 @@ function Header() {
 //     };
 
 //   }
+
+  // const ip = "8.8.8.8";
   
-  const apiKey = "at_povLdCez9qiZB5HqCbXwDzPzOYvpa";
+  // const apiKey = "at_povLdCez9qiZB5HqCbXwDzPzOYvpa";
 
-  const submit = (event) => {
-    event.preventDefault();
-    fetch(
-      `https://geo.ipify.org/api/v1?apiKey=${apiKey}&ipAddress=${ip}`
-    )
-      .then((data) => data.json())
-      .then((data) => {
-        console.log(data);
-        // this.setState({
-        //   tracers: [...data.results],
-        //   totalResults: data.total_results,
-        // });
+  // const submit = (event) => {
+  //   event.preventDefault();
+  //   fetch(
+  //     `https://geo.ipify.org/api/v1?apiKey=${apiKey}&ipAddress=${ip}`
+  //   )
+  //     .then((data) => data.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       // this.setState({
+  //       //   tracers: [...data.results],
+  //       //   totalResults: data.total_results,
+  //       // });
 
-        console.log(data);
-      });
-  };
+  //       console.log(data);
+  //     });
+  // };
 
-  const change = (event) => {
-    this.setState({ searchAdress: event.target.value });
-  };
+  // const change = (event) => {
+  //   this.setState({ searchAdress: event.target.value });
+  // };
 
-  render() {
+  // render() {
     return (
       <div>
         <div className="container-xl">
           <h1 className="header-title">IP Address Tracker</h1>
           <Search 
-            submit={submit}
-            change={change}
+            // submit={submit}
+            // change={change}
           />
         </div>
         <Results 
 
-          tracers={this.state.tracers}
+          // tracers={this.state.tracers}
           // ip={this.state.ip}
           // city={this.state.city}
           // country={this.state.country}
@@ -72,7 +74,7 @@ function Header() {
         />
       </div>
     );
-  }
+  // }
 }
 
 export default Header;
