@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+
+/*------------- 
+    Start css
+---------------*/
+
+* {
+  padding: 0;
+  margin: 0;
+  vertical-align: baseline;
+  list-style: none;
+  border: 0;
+}
+
+.container {
+  height: 250px;
+  background-image: url("./images/pattern-bg.png");
+  background-repeat: no-repeat;
+}
+
+/*-------------------- 
+    Search Section
+----------------------*/
+
+.input-group {
+  
+}
