@@ -6,27 +6,48 @@ import "./Search.css";
 
 import RightIcon from "../../images/icon-arrow.svg";
 
-const Search = (props) => {
+const Search = () => {
   // const { submit, change } = props;
-  const [ip, setIP] = React.useState("");
+
+  const modelObject = {
+    ip: "",
+    location: {},
+    isp: "",
+  };
+
+  const [items, setItems] = React.useState(modelObject);
+  const [input, setInput] = React.useState("");
 
   const apiKey = "at_povLdCez9qiZB5HqCbXwDzPzOYvpa";
 
   async function handleSubmit(event) {
     event.preventDefault();
-    console.log({ ip });
+    // console.log({ ip });
 
-    await fetch(`https://geo.ipify.org/api/v1?apiKey=${apiKey}&ipAddress=${ip}`)
+    await fetch(
+      `https://geo.ipify.org/api/v1?apiKey=${apiKey}&ipAddress=${input}`
+    )
       .then((response) => {
-        console.log(response);
-
+        // console.log(response);
         return response.json();
       })
-      .then((json) => {
-        console.log(json);
-        return json;
+      .then((result) => {
+        // console.log(result);
+        setItems({
+          id: result.ip,
+          location: result.location,
+          isp: result.isp,
+        });
       });
+
+    console.log(items);
   }
+
+  
+
+  const handleChange = (event) => {
+    setInput(event.target.value);
+  };
 
   return (
     <form onSubmit={handleSubmit} className="my-wrap">
@@ -34,8 +55,9 @@ const Search = (props) => {
         type="text"
         className="searchTerm"
         placeholder="Search for any IP adress or domain"
-        value={ip}
-        onChange={({ target }) => setIP(target.value)}
+        value={input}
+        // onChange={({ target }) => setIP(target.value)}
+        onChange={handleChange}
       />
       <button type="submit" className="searchButton">
         {" "}

@@ -1,74 +1,45 @@
 import React from "react";
-import Search from "../Search/Search";
 
 import "./Results.css";
-// import Search from "../Search/Search";
+import Search from "../Search/Search";
 // import { useState } from "react";
 
 const Results = (props) => {
-  const { ip, city, country, postalCode, timezone, isp } = props;
-
-  // , 
-
-  // const handleSubmit = Search();
-
-  const apiKey = "at_povLdCez9qiZB5HqCbXwDzPzOYvpa";
-
-  const handleAddressSearch = (addressIP) => {
-    fetch(
-      `httPs://geo.ipify.org/api/v1?apiKey=${apiKey}&ipAddress=${addressIP}`
-    )
-      .then((data) => data.json())
-      .then((data) => {
-        console.log(data);
-      });
-  };
+  const { ip, location, isp } = props.items;
 
   return (
     <div>
       <div className="grid-container">
-        <ul onClick={() => handleAddressSearch(ip)}>
-          <li>
-            <span className="title-span"> IP Address </span>
-            <p> {ip} </p>
-            {/* 192.212.174.101 */}
-          </li>
-          <li>
-            <span className="title-span"> Location </span>
-            <p>
-              {city}, {country}
-            </p>
-            <p>{postalCode}</p>
-          </li>
-          <li>
-            <span className="title-span"> Timezone </span>
-            <p>{timezone}</p>
-          </li>
-          <li>
-            <span className="title-span"> ISP </span>
-            <p>{isp}</p>
-          </li>
-        </ul>
+        {/* IP ADDRESS SECTION */}
+        <div>
+          <h2 className="title-span"> IP Address </h2>
+          <p> {ip} </p>
+          {/* 192.212.174.101 */}
+        </div>
 
-        {/* {tracers.map((tracer) => {
-          return (
-            <Search
-              key={tracer.ip}
-              city={tracer.city}
-              country={tracer.country}
-              postalCode={tracer.postalCode}
-              timezone={tracer.timezone}
-              isp={tracer.isp}
-            />
-          );
-        })} */}
+        {/* LOCATION SECTION */}
+        <div>
+          <h2 className="title-span"> Location </h2>
+          <p>
+            {location.city}, {location.country}
+          </p>
+          <p>{location.postalCode}</p>
+        </div>
+
+        {/* TIMEZONE SECTION */}
+        <div>
+          <h2 className="title-span"> Timezone </h2>
+          <p>{location.timezone}</p>
+        </div>
+
+        {/* ISP SECTION */}
+        <div>
+          <h2 className="title-span"> ISP </h2>
+          <p>{isp}</p>
+        </div>
       </div>
     </div>
   );
 };
 
 export default Results;
-
-{
-  /*  */
-}
