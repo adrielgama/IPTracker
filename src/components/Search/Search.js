@@ -1,51 +1,48 @@
 // IP para teste: Algar Telecom (COREN-BA)
 // 201.16.240.129
 
-// https://github.com/kubajanik/ip-address-tracker/blob/master/src/components/App.js
-
 import React from "react";
 import "./Search.css";
 
 import RightIcon from "../../images/icon-arrow.svg";
-// import Results from "../Results/Results";
 
-const Search = (event) => {
-  const [address, setAddress] = React.useState("");
-  const [location, setLocation] = React.useState({});
+const Search = (props) => {
+  const [items, setItems] = React.useState(null);
+  const [input, setInput] = React.useState("");
 
   const apiKey = "at_povLdCez9qiZB5HqCbXwDzPzOYvpa";
 
-  React.useEffect(() => {
-    async function fetchData() {
-      // event.preventDefault();
-
-      setLocation({});
-      await fetch(
-        `https://geo.ipify.org/api/v1?apiKey=${apiKey}&ipAddress=${address}`
-      )
-        .then((response) => response.json())
-        .then((result) => {
-          setLocation({ ip: result.ip, ...result.location, isp: result.isp });
-          console.log(result);
-        });
-    }
-    fetchData();
-  }, [address]);
-
-  const handleSubmit = (event) => {
-    setAddress(address);
-    console.log(address);
+  async function handleSubmit(event) {
     event.preventDefault();
+
+    await fetch(
+      `https://geo.ipify.org/api/v1?apiKey=${apiKey}&ipAddress=${input}`
+    )
+      .then((response) => {
+        console.log(response);
+        return response.json();
+      })
+      .then((result) => {
+        console.log(result);
+        setItems(result);
+      });
+  }
+
+  const handleChange = (event) => {
+    setInput(event.target.value);
   };
+
+  
 
   return (
     <div>
-      <form onSubmit={(address) => setAddress(address)} className="my-wrap">
-      {/* <form onSubmit={(address) => handleSubmit(address)} className="my-wrap"> */}
+      <form onSubmit={handleSubmit} className="my-wrap">
         <input
           type="text"
           className="searchTerm"
           placeholder="Search for any IP adress or domain"
+          value={input}
+          onChange={handleChange}
         />
         <button type="submit" className="searchButton">
           {" "}
@@ -53,15 +50,30 @@ const Search = (event) => {
         </button>
       </form>
 
-      {/* <Results
-          key={ip}
-          ip={ip}
-          city={city}
-          country={country}
-          postalCode={postalCode}
-          time={timezone}
-          isp={isp}
-        /> */}
+      {/* <div>
+        <h2 className="title-span"> IP Address </h2>
+        {items && <p> {items.ip} </p>}
+      </div>
+
+      <div>
+        <h2 className="title-span"> Location </h2>
+        {items && (
+          <p>
+            {items.location.city}, {items.location.country}
+          </p>
+        )}
+        {items && <p> {items.location.postalCode} </p>}
+      </div>
+
+      <div>
+        <h2 className="title-span"> Timezone </h2>
+        {items && <p> UTC {items.location.timezone} </p>}
+      </div>
+
+      <div>
+        <h2 className="title-span"> ISP </h2>
+        {items && <p> {items.isp} </p>}
+      </div> */}
     </div>
   );
 };

@@ -1,9 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
-    gap: 0px 0px;
-    grid-template-areas:
-      ". . . .";
+/* .grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: ". . . .";
+} */
+
+.container-pop {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+  text-align-last: left;
+
+  position: relative;
+  top: -65px;
+  width: 80%;
+  height: 150px;
+  color: #161616;
+  background-color: #fff;
+  border-radius: 15px;
+  -webkit-box-shadow: 12px 12px 34px -13px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 12px 12px 34px -13px rgba(0, 0, 0, 0.5);
+  box-shadow: 12px 12px 34px -13px rgba(0, 0, 0, 0.5);
+}
+
+.title-span {
+  font-family: "Rubik", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #959595;
+}
+
+.title-span p {
+  font-family: "Rubik", sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  color: #2b2b2b;
 }
