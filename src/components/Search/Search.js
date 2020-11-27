@@ -1,6 +1,3 @@
-// IP para teste: Algar Telecom (COREN-BA)
-// 201.16.240.129
-
 import React from "react";
 import "./Search.css";
 
@@ -32,8 +29,6 @@ const Search = (props) => {
     setInput(event.target.value);
   };
 
-  
-
   return (
     <div>
       <form onSubmit={handleSubmit} className="my-wrap">
@@ -50,29 +45,31 @@ const Search = (props) => {
         </button>
       </form>
 
-      {/* <div>
-        <h2 className="title-span"> IP Address </h2>
-        {items && <p> {items.ip} </p>}
-      </div>
+      {/* <div className="container-pop">
+        <div>
+          <h2 className="title-span"> IP Address </h2>
+          {items && <p> {items.ip} </p>}
+        </div>
 
-      <div>
-        <h2 className="title-span"> Location </h2>
-        {items && (
-          <p>
-            {items.location.city}, {items.location.country}
-          </p>
-        )}
-        {items && <p> {items.location.postalCode} </p>}
-      </div>
+        <div>
+          <h2 className="title-span"> Location </h2>
+          {items && (
+            <p>
+              {items.location.city}, {items.location.country}
+            </p>
+          )}
+          {items && <p> {items.location.postalCode} </p>}
+        </div>
 
-      <div>
-        <h2 className="title-span"> Timezone </h2>
-        {items && <p> UTC {items.location.timezone} </p>}
-      </div>
+        <div>
+          <h2 className="title-span"> Timezone </h2>
+          {items && <p> UTC {items.location.timezone} </p>}
+        </div>
 
-      <div>
-        <h2 className="title-span"> ISP </h2>
-        {items && <p> {items.isp} </p>}
+        <div>
+          <h2 className="title-span"> ISP </h2>
+          {items && <p> {items.isp} </p>}
+        </div>
       </div> */}
     </div>
   );
