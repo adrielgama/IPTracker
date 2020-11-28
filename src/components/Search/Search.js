@@ -6,10 +6,10 @@ import RightIcon from "../../images/icon-arrow.svg";
 const Search = (props) => {
   // const [items, setItems] = React.useState(null);
   const { onChange } = props;
-
   const [input, setInput] = React.useState("");
 
   const apiKey = "at_povLdCez9qiZB5HqCbXwDzPzOYvpa";
+  // var ipformat = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -18,11 +18,11 @@ const Search = (props) => {
       `https://geo.ipify.org/api/v1?apiKey=${apiKey}&ipAddress=${input}`
     )
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         return response.json();
       })
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         // setItems(result);
         onChange(result);
       });

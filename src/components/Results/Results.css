@@ -1,17 +1,41 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
 
+.grid-container-title {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: ". . . .";
+
+  padding-top: 1.8rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-container-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: ". . . .";
+
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
 .container-pop {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 0;
+  padding-left: 50px;
   margin-right: auto;
   margin-left: auto;
 
   text-align-last: left;
 
   position: relative;
-  top: -65px;
+  top: -75px;
   width: 80%;
-  height: 150px;
+  height: 180px;
   color: #161616;
   background-color: #fff;
   border-radius: 15px;
@@ -22,14 +46,25 @@
 
 .title-span {
   font-family: "Rubik", sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 14px;
   color: #959595;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.title-span p {
+.p-res {
   font-family: "Rubik", sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 25px;
-  color: #2b2b2b;
+  color: #424242;
+}
+
+.vert-sep {
+  position: absolute;
+  width: 1px;
+  height: 80px;
+  top: 50px;
+  margin-left: -2px;
+  background: #52525280;
 }
