@@ -4,7 +4,9 @@ import "./Search.css";
 import RightIcon from "../../images/icon-arrow.svg";
 
 const Search = (props) => {
-  const [items, setItems] = React.useState(null);
+  // const [items, setItems] = React.useState(null);
+  const { onChange } = props;
+
   const [input, setInput] = React.useState("");
 
   const apiKey = "at_povLdCez9qiZB5HqCbXwDzPzOYvpa";
@@ -21,7 +23,8 @@ const Search = (props) => {
       })
       .then((result) => {
         console.log(result);
-        setItems(result);
+        // setItems(result);
+        onChange(result);
       });
   }
 
@@ -44,33 +47,6 @@ const Search = (props) => {
           <img src={RightIcon} alt="icon" />{" "}
         </button>
       </form>
-
-      {/* <div className="container-pop">
-        <div>
-          <h2 className="title-span"> IP Address </h2>
-          {items && <p> {items.ip} </p>}
-        </div>
-
-        <div>
-          <h2 className="title-span"> Location </h2>
-          {items && (
-            <p>
-              {items.location.city}, {items.location.country}
-            </p>
-          )}
-          {items && <p> {items.location.postalCode} </p>}
-        </div>
-
-        <div>
-          <h2 className="title-span"> Timezone </h2>
-          {items && <p> UTC {items.location.timezone} </p>}
-        </div>
-
-        <div>
-          <h2 className="title-span"> ISP </h2>
-          {items && <p> {items.isp} </p>}
-        </div>
-      </div> */}
     </div>
   );
 };

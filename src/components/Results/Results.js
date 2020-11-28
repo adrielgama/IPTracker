@@ -3,7 +3,7 @@ import React from "react";
 import "./Results.css";
 
 const Results = (props) => {
-  const { ip, city, country, postalCode, timezone, isp } = props;
+  const { ip, location, isp } = props;
 
   return (
     <div>
@@ -17,15 +17,15 @@ const Results = (props) => {
             <h2 className="title-span"> Location </h2>
 
             <p>
-              {city}, {country}
+              {location.city}, {location.country}
             </p>
 
-            <p> {postalCode} </p>
+            <p> {location.postalCode} </p>
           </div>
 
           <div>
             <h2 className="title-span"> Timezone </h2>
-            <p> UTC {timezone} </p>
+            <p> UTC {location.timezone} </p>
           </div>
 
           <div>
