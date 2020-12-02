@@ -32,6 +32,8 @@
 
   text-align-last: left;
 
+  z-index: 1000 !important;
+
   position: relative;
   top: -75px;
   width: 80%;

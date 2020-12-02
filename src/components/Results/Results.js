@@ -21,7 +21,7 @@ const Results = (props) => {
           <div className="grid-container-content">
             <p className="p-res"> {ip} </p>
             <p className="p-res">
-              {location.city}, {location.country} {location.postalCode}
+              {location.city + ", "} {location.country} {location.postalCode}
             </p>
             <p className="p-res">UTC {location.timezone}</p>
             <p className="p-res">{isp}</p>
