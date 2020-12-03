@@ -8,7 +8,7 @@ mapboxgl.accessToken =
 
 function Map(props) {
   const mapContainerRef = React.useRef(null);
-  const [zoom, setZoom] = React.useState(15);
+  const [zoom, setZoom] = React.useState(3);
 
   const { lat, lng } = props;
 
