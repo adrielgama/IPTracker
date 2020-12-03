@@ -26,30 +26,6 @@ const Results = (props) => {
             <p className="p-res">UTC {location.timezone}</p>
             <p className="p-res">{isp}</p>
           </div>
-
-          {/* <div>
-            <h2 className="title-span"> IP Address </h2>
-            <p className="p-res"> {ip} </p>
-          </div>
-          <div>
-            <h2 className="title-span"> Location </h2>
-
-            <p className="p-res">
-              {location.city}, {location.country}
-            </p>
-
-            <p className="p-res"> {location.postalCode} </p>
-          </div>
-
-          <div>
-            <h2 className="title-span"> Timezone </h2>
-            <p className="p-res"> UTC {location.timezone} </p>
-          </div>
-
-          <div>
-            <h2 className="title-span"> ISP </h2>
-            <p className="p-res"> {isp} </p>
-          </div> */}
         </div>
       </div>
     </div>

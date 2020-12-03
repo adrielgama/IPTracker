@@ -8,15 +8,15 @@ mapboxgl.accessToken =
 
 function Map(props) {
   const mapContainerRef = React.useRef(null);
-  const [zoom, setZoom] = React.useState(3);
+  const [zoom, setZoom] = React.useState(10);
 
   const { lat, lng } = props;
-
   console.log(props);
 
   //   const [lng, setLng] = React.useState("");
   //   const [lat, setLat] = React.useState("");
 
+  
   React.useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
@@ -39,11 +39,11 @@ function Map(props) {
 
   return (
     <div>
-      <div className="sidebarStyle">
+      {/* <div className="sidebarStyle">
         <div>
           Latitude: {lat} | Longitude: {lng} | Zoom: {zoom}
         </div>
-      </div>
+      </div> */}
       <div className="map-container" ref={mapContainerRef} />
     </div>
   );
