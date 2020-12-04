@@ -16,7 +16,7 @@ function Map(props) {
   //   const [lng, setLng] = React.useState("");
   //   const [lat, setLat] = React.useState("");
 
-  
+
   React.useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
@@ -35,7 +35,7 @@ function Map(props) {
     });
 
     return () => map.remove();
-  }, []);
+  }, [lat, lng]);
 
   return (
     <div>

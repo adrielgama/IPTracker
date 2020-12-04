@@ -14,8 +14,8 @@ function Header() {
       country: "",
       postalCode: "",
       timezone: "",
-      lat: "-9.7968",
-      lng: "-62.8488",
+      lat: "-15.7979",
+      lng: "-47.8843",
     },
     isp: "",
   });
